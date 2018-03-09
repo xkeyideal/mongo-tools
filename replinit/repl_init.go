@@ -1,8 +1,9 @@
 package replinit
 
 import (
-	"mongo-tools/common/db"
 	"strings"
+
+	"github.com/xkeyideal/mongo-tools/common/db"
 
 	"gopkg.in/mgo.v2/bson"
 )

@@ -2,11 +2,11 @@ package db
 
 import (
 	"fmt"
-	"mongo-tools/common/options"
 	"sync"
 	"time"
 
-	"gopkg.in/mgo.v2"
+	"github.com/xkeyideal/mongo-tools/common/options"
+	mgo "gopkg.in/mgo.v2"
 )
 
 type (

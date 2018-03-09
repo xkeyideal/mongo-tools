@@ -6,8 +6,8 @@ import (
 	"sort"
 	"time"
 
-	"mongo-tools/common/text"
-	"mongo-tools/common/util"
+	"github.com/xkeyideal/mongo-tools/common/text"
+	"github.com/xkeyideal/mongo-tools/common/util"
 )
 
 type ReaderConfig struct {

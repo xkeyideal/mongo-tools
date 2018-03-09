@@ -3,10 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"mongo-tools/collstat"
-	"mongo-tools/common/db"
-	"mongo-tools/common/options"
 	"os"
+
+	"github.com/xkeyideal/mongo-tools/collstat"
+	"github.com/xkeyideal/mongo-tools/common/db"
+	"github.com/xkeyideal/mongo-tools/common/options"
 )
 
 func main() {

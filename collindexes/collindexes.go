@@ -1,10 +1,9 @@
 package collindexes
 
 import (
-	"mongo-tools/common/db"
-	"mongo-tools/common/options"
-
-	"gopkg.in/mgo.v2"
+	"github.com/xkeyideal/mongo-tools/common/db"
+	"github.com/xkeyideal/mongo-tools/common/options"
+	mgo "gopkg.in/mgo.v2"
 )
 
 type CollIndexes struct {

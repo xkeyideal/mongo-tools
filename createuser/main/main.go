@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"mongo-tools/common/db"
-	"mongo-tools/common/options"
-	"mongo-tools/createuser"
 	"os"
+
+	"github.com/xkeyideal/mongo-tools/common/db"
+	"github.com/xkeyideal/mongo-tools/common/options"
+	"github.com/xkeyideal/mongo-tools/createuser"
 )
 
 func main() {

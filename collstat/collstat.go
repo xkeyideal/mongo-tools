@@ -1,8 +1,8 @@
 package collstat
 
 import (
-	"mongo-tools/common/db"
-	"mongo-tools/common/options"
+	"github.com/xkeyideal/mongo-tools/common/db"
+	"github.com/xkeyideal/mongo-tools/common/options"
 
 	"gopkg.in/mgo.v2/bson"
 )

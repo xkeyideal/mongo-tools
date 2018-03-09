@@ -2,9 +2,10 @@ package createuser
 
 import (
 	"errors"
-	"mongo-tools/common/db"
 
-	"gopkg.in/mgo.v2"
+	"github.com/xkeyideal/mongo-tools/common/db"
+
+	mgo "gopkg.in/mgo.v2"
 )
 
 const (

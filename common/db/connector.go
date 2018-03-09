@@ -4,11 +4,11 @@ import (
 	"net"
 	"time"
 
-	"mongo-tools/common/options"
+	"github.com/xkeyideal/mongo-tools/common/options"
 
-	"mongo-tools/common/util"
+	"github.com/xkeyideal/mongo-tools/common/util"
 
-	"gopkg.in/mgo.v2"
+	mgo "gopkg.in/mgo.v2"
 )
 
 // Interface type for connecting to the database.

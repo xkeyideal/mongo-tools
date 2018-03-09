@@ -1,9 +1,9 @@
 package stat_consumer
 
 import (
-	"mongo-tools/mongostat/stat_consumer/line"
+	"github.com/xkeyideal/mongo-tools/mongostat/stat_consumer/line"
 
-	"mongo-tools/mongostat/status"
+	"github.com/xkeyideal/mongo-tools/mongostat/status"
 )
 
 // StatConsumer maintains the current set of headers and the most recent

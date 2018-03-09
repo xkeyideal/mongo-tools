@@ -1,8 +1,8 @@
 package collnames
 
 import (
-	"mongo-tools/common/db"
-	"mongo-tools/common/options"
+	"github.com/xkeyideal/mongo-tools/common/db"
+	"github.com/xkeyideal/mongo-tools/common/options"
 )
 
 type CollNames struct {

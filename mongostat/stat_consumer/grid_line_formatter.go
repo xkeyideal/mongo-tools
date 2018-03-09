@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strings"
 
-	"mongo-tools/mongostat/stat_consumer/line"
+	"github.com/xkeyideal/mongo-tools/mongostat/stat_consumer/line"
 
-	"mongo-tools/common/text"
+	"github.com/xkeyideal/mongo-tools/common/text"
 )
 
 // GridLineFormatter uses a text.GridWriter to format the StatLines as a grid

@@ -3,19 +3,19 @@ package mongostat
 
 import (
 	"context"
-	"mongo-tools/common/db"
-	"mongo-tools/mongostat/stat_consumer"
-	"mongo-tools/mongostat/stat_consumer/line"
 	"strings"
 	"sync"
 	"sync/atomic"
 	"time"
 
-	"mongo-tools/common/options"
+	"github.com/xkeyideal/mongo-tools/common/db"
+	"github.com/xkeyideal/mongo-tools/mongostat/stat_consumer"
+	"github.com/xkeyideal/mongo-tools/mongostat/stat_consumer/line"
 
-	"mongo-tools/mongostat/status"
+	"github.com/xkeyideal/mongo-tools/common/options"
 
-	"gopkg.in/mgo.v2"
+	"github.com/xkeyideal/mongo-tools/mongostat/status"
+
 	"gopkg.in/mgo.v2/bson"
 )
 

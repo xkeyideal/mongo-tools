@@ -3,7 +3,7 @@ package stat_consumer
 import (
 	"sync/atomic"
 
-	"mongo-tools/mongostat/stat_consumer/line"
+	"github.com/xkeyideal/mongo-tools/mongostat/stat_consumer/line"
 )
 
 // A LineFormatter formats StatLines for printing.

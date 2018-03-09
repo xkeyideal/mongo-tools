@@ -3,11 +3,12 @@ package mongotop
 import (
 	"context"
 	"fmt"
-	"mongo-tools/common/db"
-	"mongo-tools/common/options"
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/xkeyideal/mongo-tools/common/db"
+	"github.com/xkeyideal/mongo-tools/common/options"
 )
 
 const (
