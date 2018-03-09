@@ -1,0 +1,68 @@
+package db
+
+import (
+	"net"
+	"time"
+
+	"mongo-tools/common/options"
+
+	"mongo-tools/common/util"
+
+	"gopkg.in/mgo.v2"
+)
+
+// Interface type for connecting to the database.
+type DBConnector interface {
+	// configure, based on the options passed in
+	Configure(*options.ToolOptions) error
+
+	// dial the database and get a fresh new session
+	GetNewSession() (*mgo.Session, error)
+}
+
+// Basic connector for dialing the database, with no authentication.
+type VanillaDBConnector struct {
+	dialInfo *mgo.DialInfo
+}
+
+// Configure sets up the db connector using the options in opts. It parses the
+// connection string and then sets up the dial information using the default
+// dial timeout.
+func (self *VanillaDBConnector) Configure(opts *options.ToolOptions) error {
+	timeout := time.Duration(opts.Timeout) * time.Second
+
+	// create the dialer func that will be used to connect
+	dialer := func(addr *mgo.ServerAddr) (net.Conn, error) {
+		conn, err := net.DialTimeout("tcp", addr.String(), timeout)
+		if err != nil {
+			return nil, err
+		}
+		// enable TCP keepalive
+		err = util.EnableTCPKeepAlive(conn, time.Duration(opts.TCPKeepAliveSeconds)*time.Second)
+		if err != nil {
+			return nil, err
+		}
+		return conn, nil
+	}
+
+	// set up the dial info
+	self.dialInfo = &mgo.DialInfo{
+		Direct:         opts.Direct,
+		ReplicaSetName: opts.ReplicaSetName,
+		Username:       opts.Username,
+		Password:       opts.Password,
+		Source:         opts.GetAuthenticationDatabase(),
+		//Mechanism:      opts.Mechanism,
+		DialServer: dialer,
+		Timeout:    timeout,
+		Addrs:      opts.Addrs,
+	}
+
+	return nil
+}
+
+// GetNewSession connects to the server and returns the established session and any
+// error encountered.
+func (self *VanillaDBConnector) GetNewSession() (*mgo.Session, error) {
+	return mgo.DialWithInfo(self.dialInfo)
+}
